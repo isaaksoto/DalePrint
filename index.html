@@ -1,48 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dale Print</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #0d6efd, #6610f2);
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      background-size: cover;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .servicios .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .servicios .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer {
+      background-color: #212529;
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Dale Print</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
   <!-- Hero -->
-  <section class="py-5 text-center bg-primary text-white">
+  <section class="hero">
     <div class="container">
-      <h1 class="display-5 fw-bold">Bienvenido a Dale Print</h1>
-      <p class="lead">Impresión rápida, confiable y personalizada para tu negocio</p>
-      <a href="https://wa.me/1234567890" class="btn btn-light btn-lg mt-3" target="_blank">Contáctanos por WhatsApp</a>
+      <h1>Impulsa tu marca con Dale Print</h1>
+      <p>Impresión profesional para negocios que dejan huella</p>
+      <a href="#servicios" class="btn btn-light mt-4">Ver servicios</a>
     </div>
   </section>
 
-  <!-- Catálogo -->
-  <section id="catalogo" class="py-5">
+  <!-- Servicios -->
+  <section id="servicios" class="servicios py-5">
     <div class="container">
-      <h2 class="text-center mb-4">Catálogo de Servicios</h2>
+      <h2 class="text-center mb-5">Nuestros Servicios</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">Stickers Personalizados</h5>
-              <p class="card-text">Diseños únicos para tu marca, productos o eventos.</p>
+              <p class="card-text">Dale vida a tu marca con etiquetas únicas y llamativas.</p>
             </div>
           </div>
         </div>
@@ -50,7 +103,7 @@
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">Banners y Roll-Ups</h5>
-              <p class="card-text">Alta calidad para promociones y eventos especiales.</p>
+              <p class="card-text">Promociona tu negocio con material visual de alto impacto.</p>
             </div>
           </div>
         </div>
@@ -58,7 +111,7 @@
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">Magnéticos para Autos</h5>
-              <p class="card-text">Publicidad móvil para tu negocio con estilo profesional.</p>
+              <p class="card-text">Publicidad sobre ruedas, removible y durable.</p>
             </div>
           </div>
         </div>
@@ -66,21 +119,18 @@
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section id="contacto" class="py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="mb-4">¿Listo para ordenar?</h2>
-      <p class="mb-3">Escríbenos directamente por WhatsApp para recibir asistencia rápida.</p>
-      <a href="https://wa.me/1234567890" class="btn btn-success btn-lg" target="_blank">Hablar por WhatsApp</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-4 bg-dark text-white text-center">
+  <!-- Contacto / Footer -->
+  <footer class="footer">
     <div class="container">
-      <p class="mb-0">© 2025 Dale Print. Todos los derechos reservados.</p>
+      <p class="mb-1">¿Tienes preguntas? ¡Estamos para ayudarte!</p>
+      <p class="mb-0">© 2025 Dale Print</p>
     </div>
   </footer>
+
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-btn">
+    💬
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
